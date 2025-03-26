@@ -148,7 +148,6 @@ let weatherData
             }
 
             if (response.status === 400) {
-                console.log('API response details:', await response.text());
                 throw new Error('Invalid request to weather API');
             } else if (response.status === 401) {
                 throw new Error('API key issue');
@@ -209,7 +208,7 @@ let weatherData
             return formattedData;
             
         } catch (error) {
-            console.error('Error fetching weather data:', error);
+            console.error('Error fetching:', error);
             throw error;
         }
         }
